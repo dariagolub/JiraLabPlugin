@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Laboratory</title>
+    <meta name="decorator" content="atl.general">
+    <meta charset="utf-8">
+</head>
+<body>
+<div class="aui-tabs vertical-tabs" role="application">
+    <ul class="tabs-menu" role="tablist">
+        <li class="menu-item active-tab" role="presentation">
+            <a href="#tabA" id="aui-uid-0-1420915880205" role="tab" aria-selected="true"><strong>A</strong></a>
+        </li>
+        <li class="menu-item" role="presentation">
+            <a href="#tabB" id="aui-uid-1-1420915880205" role="tab" aria-selected="false"><strong>B</strong></a>
+        </li>
+        <li class="menu-item" role="presentation">
+            <a href="#tabC" id="aui-uid-1-1420915880205" role="tab" aria-selected="false"><strong>C</strong></a>
+        </li>
+    </ul>
+    <div class="tabs-pane active-pane" id="tabA" role="tabpanel" aria-hidden="false">
+        <h2>Tab A</h2>
+        <p> Happy New Year! </p>
+        <img src="https://31.media.tumblr.com/tumblr_m4xx6vkyFG1rw27hzo1_500.gif" alt="Live long and prosper" style="width:500px;height:233px">
+    </div>
+    <div class="tabs-pane" id="tabB" role="tabpanel" aria-hidden="true">
+        <h2>Tab B</h2>
+    </div>
+    <div class="tabs-pane" id="tabC" role="tabpanel" aria-hidden="true">
+        <h2>Tab C</h2>
+    </div>
+</div>
+</div>
+</body>
+</html>

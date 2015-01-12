@@ -1,0 +1,43 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="lab"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="lab-resources" name="lab Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="lab.css" location="/css/lab.css"/>
+        <resource type="download" name="lab.js" location="/js/lab.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>lab</context>
+    </web-resource>
+
+    <servlet name="Lab Servlet" key="lab" class="laboratory.MyPluginServlet">
+        <description>3 tabs</description>
+        <url-pattern>/laboratory</url-pattern>
+    </servlet>
+    
+    <!-- publish our component -->
+    <component key="myPluginComponent" class="laboratory.MyPluginComponentImpl" public="true">
+        <interface>laboratory.MyPluginComponent</interface>
+    </component>
+    
+    <!-- import from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+    <component-import key="velocity-renderer" interface="com.atlassian.templaterenderer.TemplateRenderer" />
+
+    <web-item key="my_links_link" name="Link on My Links Main Section" section="system.top.navigation.bar" weight="47">
+        <label>Лаборатория</label>
+        <link linkId="my_links_link" absolute="false">/plugins/servlet/laboratory</link>
+    </web-item>
+    
+</atlassian-plugin>
