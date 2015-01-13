@@ -3,6 +3,7 @@
     <title>Laboratory</title>
     <meta name="decorator" content="atl.general">
     <meta charset="utf-8">
+
 </head>
 <body>
 <div class="aui-tabs vertical-tabs" role="application">
@@ -18,9 +19,20 @@
         </li>
     </ul>
     <div class="tabs-pane active-pane" id="tabA" role="tabpanel" aria-hidden="false">
-        <h2>Tab A</h2>
-        <p> Happy New Year! </p>
-        <img src="https://31.media.tumblr.com/tumblr_m4xx6vkyFG1rw27hzo1_500.gif" alt="Live long and prosper" style="width:500px;height:233px">
+        <h2>Table</h2>
+        <form class="aui" method="POST" id="myform">
+            <div class="field-group">
+                <label for="task-input">Entry</label>
+                <textarea class="textarea" name="task-input" id="task-input" placeholder="Enter text..."></textarea>
+            </div>
+            <div class="buttons-container">
+                <div class="buttons">
+                    <input class="button submit" type="submit" value="Submit" id="submit-button">
+                </div>
+            </div>
+        </form>
+        <table class="aui" id="mytable">
+        </table>
     </div>
     <div class="tabs-pane" id="tabB" role="tabpanel" aria-hidden="true">
         <h2>Tab B</h2>
@@ -30,5 +42,10 @@
     </div>
 </div>
 </div>
+
+<script type="text/javascript">
+    #include("test.js")
+</script>
+
 </body>
 </html>
