@@ -7,18 +7,20 @@ var writedata = function(data){
     AJS.$("#mytable").html(table);
 };
 
-AJS.$.ajax({
-    url: "/jira/plugins/servlet/todo/list",
-    type: "GET",
-    dataType: "json",
-    data: ({"projectsOnly" : "true"}),
-    success: writedata
+AJS.$(document).ready(function() {
+    AJS.$.ajax({
+        url: AJS.params.baseURL + "/plugins/servlet/todo/list",
+        type: "GET",
+        dataType: "json",
+        data: ({"projectsOnly" : "true"}),
+        success: writedata
+    });
 });
 
-AJS.$("#myform").submit(function() {
 
+AJS.$("#myform").submit(function() {
     AJS.$.ajax({
-        url: "/jira/plugins/servlet/todo/list",
+        url: AJS.params.baseURL + "/plugins/servlet/todo/list",
         type: "POST",
         dataType: "json",
         data: AJS.$("#myform").serialize(), // serializes the form's elements.
