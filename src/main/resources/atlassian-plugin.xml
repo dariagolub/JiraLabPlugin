@@ -13,6 +13,9 @@
     <!-- add our web resources -->
     <web-resource key="lab-resources" name="lab Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin:jquery</dependency>
+        <dependency>com.atlassian.auiplugin:jquery-ui-other</dependency>
+        <dependency>com.atlassian.auiplugin:aui-select</dependency>
         
         <resource type="download" name="lab.css" location="/css/lab.css"/>
         <resource type="download" name="lab.js" location="/js/lab.js"/>
@@ -26,14 +29,19 @@
         <url-pattern>/laboratory</url-pattern>
     </servlet>
 
-    <servlet name="Todo List Servlet" class="laboratory.TodoServlet" key="todo-list">
+    <servlet name="Name List Servlet" class="laboratory.NameServlet" key="name-list">
         <description>A servlet to add and list todos</description>
-        <url-pattern>/todo/list</url-pattern>
+        <url-pattern>/name/list</url-pattern>
+    </servlet>
+    <servlet name="Entry List Servlet" class="laboratory.EntryServlet" key="entry-list">
+        <description>A servlet to add and list entries</description>
+        <url-pattern>/entry/list</url-pattern>
     </servlet>
 
     <ao key="ao-module">
         <description>The module configuring the Active Objects service used by this plugin</description>
-        <entity>laboratory.Todo</entity>
+        <entity>laboratory.Name</entity>
+        <entity>laboratory.Entry</entity>
     </ao>
     
     <!-- publish our component -->

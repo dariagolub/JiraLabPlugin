@@ -3,7 +3,6 @@
     <title>Laboratory</title>
     <meta name="decorator" content="atl.general">
     <meta charset="utf-8">
-
 </head>
 <body>
 <div class="aui-tabs vertical-tabs" role="application">
@@ -22,8 +21,8 @@
         <h2>Table</h2>
         <form class="aui" method="POST" id="myform">
             <div class="field-group">
-                <label for="task-input">Entry</label>
-                <textarea class="textarea" name="task-input" id="task-input" placeholder="Enter text..."></textarea>
+                <label for="name-input">Name</label>
+                <textarea class="textarea" name="name-input" id="name-input" placeholder="Enter text..."></textarea>
             </div>
             <div class="buttons-container">
                 <div class="buttons">
@@ -35,7 +34,20 @@
         </table>
     </div>
     <div class="tabs-pane" id="tabB" role="tabpanel" aria-hidden="true">
-        <h2>Tab B</h2>
+        <h2>Table 2</h2>
+        <form class="aui" method="post" id="myform2">
+            <div class="field-group">
+                <label for="entry-input">Entry</label>
+                <textarea class="textarea" name="entry-input" id="entry-input" placeholder="Enter text..."></textarea>
+            </div>
+            <div class="buttons-container">
+                <div class="buttons">
+                    <input class="button submit" type="submit" value="Submit" id="submit-button2">
+                </div>
+            </div>
+        </form>
+        <table class="aui" id="mytable2">
+        </table>
     </div>
     <div class="tabs-pane" id="tabC" role="tabpanel" aria-hidden="true">
         <h2>Tab C</h2>

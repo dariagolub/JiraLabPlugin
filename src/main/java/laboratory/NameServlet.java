@@ -15,10 +15,10 @@ import java.io.PrintWriter;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public final class TodoServlet extends HttpServlet {
+public final class NameServlet extends HttpServlet {
     private final ActiveObjects ao;
 
-    public TodoServlet(ActiveObjects ao) {
+    public NameServlet(ActiveObjects ao) {
         this.ao = checkNotNull(ao);
     }
 
@@ -35,7 +35,7 @@ public final class TodoServlet extends HttpServlet {
                 public Void doInTransaction() {
                     try {
 
-                        for (Todo todo : ao.find(Todo.class)) // (2)
+                        for (Name todo : ao.find(Name.class)) // (2)
                         {
                            JSONObject jsonObj = new JSONObject();
                            jsonObj.put("description", todo.getDescription());
@@ -60,13 +60,13 @@ public final class TodoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
     {
-        final String description = req.getParameter("task-input");
-        ao.executeInTransaction(new TransactionCallback<Todo>()
+        final String description = req.getParameter("name-input");
+        ao.executeInTransaction(new TransactionCallback<Name>()
         {
             @Override
-            public Todo doInTransaction()
+            public Name doInTransaction()
             {
-                final Todo todo = ao.create(Todo.class);
+                final Name todo = ao.create(Name.class);
                 todo.setDescription(description);
                 todo.setComplete(false);
                 todo.save();
@@ -74,6 +74,6 @@ public final class TodoServlet extends HttpServlet {
             }
         });
 
-        res.sendRedirect(req.getContextPath() + "/plugins/servlet/todo/list");
+        res.sendRedirect(req.getContextPath() + "/plugins/servlet/name/list");
     }
 }
